@@ -22,10 +22,10 @@ const DatingCards = () =>{
     //  declaramos el estado inical del  componente, este caso iniciamos un arreglo de people
     const [people, setPeople ] = useState([]);
 
-    //actulisamos el estado mediante useEffect
+    //actulisamos el estado mediante useEffect para poblar las cards
     useEffect(() => {
         async function fetchData() {
-            const req = await axios.get("/dating/cards")
+            const req = await axios.get("/dating/getCards")
             setPeople(req.data)
         }
         fetchData()
